@@ -26,11 +26,16 @@ public class p02_3 {/* kakao HINT
 
         int score = 0; //점수 계산 저장소
 
+//        int stringToInt(String str  ){
+//            return;
+//        }
+
         //처리
         tokens = one.split(""); // 하나씩 잘라서 배열에 넣음 //근데 이것보다 정규식으로 바로 자르는게 좋을듯
         for(int i = 0; i < tokens.length; i++) {
-            System.out.println(tokens[i]); //하나씩 잘라내서 배열에 저장 완료
+            System.out.println(tokens[i]); //하나씩 잘라내서 배열에 저장 완료 //왜?
             token = tokens[i];
+            System.out.println(token);
             if(token.equals("[/d]")) {
                 //score = ;
             }else if(token.equals("[/w]")) {
