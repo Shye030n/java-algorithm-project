@@ -43,7 +43,7 @@ public class P02_5 {
             token = tokens.get(i);
             readOneToken = token.charAt(0);
 
-            //점수,보너스,옵션에 나눠서 처리
+            //점수,보너스,옵션 분기 처리
 
             //점수 처리
             if (token.startsWith("10")) { //10인 경우
