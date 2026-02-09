@@ -1,15 +1,18 @@
 package kakao.p2;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class P02_5 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //입력
-//        String one = "1S2D*3T"; //37
-        String one = "1D2S#10S";
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine();
 
         //처리
         String regex = "(10|[1-9])[SDT][*#]?"; //정규식
@@ -30,7 +33,7 @@ public class P02_5 {
 
         //정규식 생성
         Pattern p = Pattern.compile(regex); //정규식 컴파일
-        Matcher m = p.matcher(one); //정규식 적용
+        Matcher m = p.matcher(input); //정규식 적용
 
         //조건에 따라 토큰에 저장
         while (m.find()) {
@@ -38,6 +41,7 @@ public class P02_5 {
             tokens.add(m.group()); //토큰 저장
         }
 
+        //토큰 세 번 반복
         for (int i = 0; i < tokens.size(); i++) {
             // 한 글자씩 잘라서 읽기
             token = tokens.get(i);
@@ -75,7 +79,7 @@ public class P02_5 {
                 finalScore = finalScore;
             }
 
-            scoreArray[i] = finalScore; // 토큰 저장 (항상 저장을 빼먹어)
+            scoreArray[i] = finalScore; // 토큰 값 저장
             System.out.println("-" +"[" + (i) + "] 번째 토큰 : " + scoreArray[i]);
 
         }
@@ -84,6 +88,6 @@ public class P02_5 {
         for(int s : scoreArray) {
             result = result + s;
         }
-        System.out.println("*** 게임 최종 점수 결과" + result);
+        System.out.println("*** 게임 최종 점수 결과는 " + result + " 점 입니다.");
     }
 }
