@@ -12,7 +12,7 @@ public class P02_5 {
         String one = "1D2S#10S";
 
         //처리
-        String regex = "([1-9]|10)[SDT][*#]?"; //정규식
+        String regex = "(10|[1-9])[SDT][*#]?"; //정규식
 
         List<String> tokens; //String) 정규식으로 토큰화 {3}
         tokens = new ArrayList<>();
