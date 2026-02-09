@@ -8,13 +8,13 @@ import java.util.regex.Pattern;
 public class P02_5 {
     public static void main(String[] args) {
         //입력
-        String one = "1S2D*3T"; //37
-//        String one = "1D2S#10S";
+//        String one = "1S2D*3T"; //37
+        String one = "1D2S#10S";
 
         //처리
         String regex = "([1-9]|10)[SDT][*#]?"; //정규식
 
-        List<String> tokens; //전체 토큰 {3}
+        List<String> tokens; //String) 정규식으로 토큰화 {3}
         tokens = new ArrayList<>();
 
         String token; //토큰
@@ -23,10 +23,10 @@ public class P02_5 {
         int score = 0;// 점수 계산 시작점
         int bonus; // 보너스
 
-        int[] scoreArray = new int[3]; //토큰 별 점수
-
         int finalScore = 0; //최종 점수
         int result; //출력용 최종 점수 합계
+
+        int[] scoreArray = new int[3]; //int) 토큰 별 점수 저장
 
         //정규식 생성
         Pattern p = Pattern.compile(regex); //정규식 컴파일
@@ -41,7 +41,7 @@ public class P02_5 {
         for (int i = 0; i < tokens.size(); i++) {
             // 한 글자씩 잘라서 읽기
             token = tokens.get(i);
-            readOneToken = token.charAt(i);
+            readOneToken = token.charAt(0);
 
             //점수,보너스,옵션에 나눠서 처리
 
@@ -75,13 +75,14 @@ public class P02_5 {
                 finalScore = finalScore;
             }
 
-            System.out.println("-" +"[" + (i) + "] 번째 토큰 : " + finalScore);
+            scoreArray[i] = finalScore; // 토큰 저장 (항상 저장을 빼먹어)
+            System.out.println("-" +"[" + (i) + "] 번째 토큰 : " + scoreArray[i]);
 
         }
         //출력
         result = 0;
         for(int s : scoreArray) {
-            result += s;
+            result = result + s;
         }
         System.out.println("*** 게임 최종 점수 결과" + result);
     }
