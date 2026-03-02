@@ -1,4 +1,4 @@
-package practice;
+package practice.binary;
 
 public class BinaryScale {
     public static void main(String[] args) {

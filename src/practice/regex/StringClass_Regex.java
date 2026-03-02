@@ -1,4 +1,4 @@
-package practice;
+package practice.regex;
 
 public class StringClass_Regex {
     public static void main(String[] args) {

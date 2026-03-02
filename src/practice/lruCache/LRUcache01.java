@@ -1,4 +1,4 @@
-package practice;
+package practice.lruCache;
 
 import java.util.HashMap;
 import java.util.Map;
