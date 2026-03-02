@@ -14,6 +14,15 @@ class Node {
     }
 }
 ````
+### 주요 API
+
+- **addFirst(Node node) : 맨 앞 삽입**
+- **addLast(Node node) : 맨 뒤 삽입**
+- **remove(Node node) : 특정 노드 삭제**
+- **moveToFront(Node node) : 노드를 맨 앞으로 이동**
+- **removeLast() : 맨 뒤 노드 삭제**
+
+---
 
 ### 장점
 
@@ -27,10 +36,3 @@ class Node {
 - 배열처럼 이덱스로 접근 불가. 탐색은O(n)
 - 구현 난이도가 단순 LinkedList 보다 높음
 
-### 주요 API
-
-- addFirst(Node node) : 맨 앞 삽입
-- addLast(Node node) : 맨 뒤 삽입
-- remove(Node node) : 특정 노드 삭제
-- moveToFront(Node node) : 노드를 맨 앞으로 이동
-- removeLast() : 맨 뒤 노드 삭제
