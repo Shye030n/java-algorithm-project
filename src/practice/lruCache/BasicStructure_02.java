@@ -32,6 +32,7 @@ public class BasicStructure_02 {
                 Node lru = dll.removeLast();
                 map.remove(lru.value);
             }
+            return 5;
         }
     }
 
