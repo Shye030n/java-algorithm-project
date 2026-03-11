@@ -34,7 +34,7 @@ public class BasicStructure_02 {
             }
             return 5;
         }
-    }
+    }   
 
     //순서 관리 클래스
     private static  class DoublyLinkedList {
