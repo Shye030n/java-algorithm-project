@@ -37,7 +37,8 @@ public class DoublyLinkedList<T> {
         }
 
         public void remove(Node<T> node) {
-            if (node == null) return;
+            if (node == null) return
+                    ;
             if (node.prev != null) node.prev.next = node.next;
             else head = node.next;
             if (node.next != null) node.next.prev = node.prev;
