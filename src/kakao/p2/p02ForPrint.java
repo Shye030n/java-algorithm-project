@@ -10,11 +10,11 @@ import java.util.regex.Pattern;
 
 public class p02ForPrint {
     public static void main(String[] args) throws IOException {
-        //입력
+        //
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String input = br.readLine();
 
-        //처리
+        //
         String regex = "(10|[1-9])[SDT][*#]?";
 
         List<String> tokens;
@@ -31,31 +31,23 @@ public class p02ForPrint {
 
         int[] scoreArray = new int[3];
 
-        //정규식 생성
         Pattern p = Pattern.compile(regex);
         Matcher m = p.matcher(input);
 
-        //조건에 따라 토큰에 저장
         while (m.find()) {
-            tokens.add(m.group()); //토큰 저장
+            tokens.add(m.group());
         }
 
-        //토큰 세 번 반복
         for (int i = 0; i < tokens.size(); i++) {
-            // 한 글자씩 잘라서 읽기
             token = tokens.get(i);
             readOneToken = token.charAt(0);
 
-            //점수,보너스,옵션 분기 처리
-
-            //점수 처리
             if (token.startsWith("10")) {
                 score = 10;
             } else {
                 score = readOneToken - '0';
             }
 
-            //보너스 처리
             bonus = token.startsWith("10") ? token.charAt(2) : token.charAt(1);
 
             if(bonus == 'S') {
@@ -66,7 +58,6 @@ public class p02ForPrint {
                 finalScore = score * score * score;
             }
 
-            //옵션 처리;
             if(token.endsWith("*")){
                 finalScore = finalScore * 2;
                 if(i > 0){
@@ -78,11 +69,10 @@ public class p02ForPrint {
                 finalScore = finalScore;
             }
 
-            scoreArray[i] = finalScore; // 토큰 값 저장
+            scoreArray[i] = finalScore;
             System.out.println("-" +"[" + (i) + "] 번째 토큰 : " + scoreArray[i]);
 
         }
-        //출력
         result = 0;
         for(int s : scoreArray) {
             result = result + s;
