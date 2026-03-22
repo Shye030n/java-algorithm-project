@@ -14,6 +14,14 @@ import java.util.StringTokenizer;
 * ArrayList : 캐시를 관리하면서 LRU 로직 구현
 * String Builder : 출력 문자열을 효율적으로 합침
 */
+
+/*
+* 전체 흐름 )
+* 입력 : BufferedReader로 한 줄 읽음
+* 분리 : StringTokenizer로 공백 기준 토큰화
+* 처리 : 각 토큰을 cache.access(city)로 LRU 캐시에 반영
+* 출력 : printCache()에서 StringBuilder로 문자열 합쳐서 출력
+*/
 public class Array_LRUCache_BufferedReader_StringTokenizer {
     private int capacity; //캐시의 최대 크기를 저장할 변수
     private List<String> cache; //문자열 캐시 데이터를 관리할 ArrayList
@@ -43,11 +51,14 @@ public class Array_LRUCache_BufferedReader_StringTokenizer {
     }
 
     public static void main(String[] args) throws IOException { //프로그램 시작점
-        // TODO IOException?, main 메서드에서 입력받을 때 "입출력 예외"가 발생할 수 있으므로 throws로 선언해둠
+        // IOException?, main 메서드에서 BufferedReader로 입력받을 때 "입출력 예외"가 발생할 수 있으므로 throws로 선언해둠
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in)); //사용자 입력값을 한 줄씩 읽을 객체 생성
+
         System.out.print("제한할 캐시 크기를 입력하세요.");
         int capacity = Integer.parseInt(br.readLine()); //한 줄 씩 읽은 문자열을 정수형으로 변환하여 capacity 변수에 저장
+
         Array_LRUCache_BufferedReader_StringTokenizer cache = new Array_LRUCache_BufferedReader_StringTokenizer(capacity); //LRU 처리 객체 생성
+
         System.out.print("도시 이름을 공백으로 구분하여 입력하세요.");
         StringTokenizer st = new StringTokenizer(br.readLine(), " "); //공백을 구분자로 하여 토큰화
         while (st.hasMoreTokens()) { //남은 토큰이 없어질 때까지 계속 반복
