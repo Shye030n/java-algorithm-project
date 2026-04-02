@@ -14,7 +14,7 @@ public class P_01_06_re {
             int result = arr1[col] | arr2[col]; //이진연산으로 둘 다 0인 경우만 추출
 
             for (int row = 0; row < n; row++) {
-                mergedArr[col][row] = result & 1;
+                mergedArr[col][row] = result & 1; //&는 비트연산자로, 각 자리(
                 result = result >> 1;
             }
         }
