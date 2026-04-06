@@ -15,6 +15,7 @@ public class M_01 {
     * 문자열 입력 -> 2차원 배열 변환
     */
 
+
     /* 입력받은 문자열을 2차원 배열로 변환하는 메서드 */
 
     /* 선과 점의 개수를 저장할 변수*/
@@ -23,6 +24,8 @@ public class M_01 {
     int diagonalLine; //대각선
     int intersectionPoint; //접점
 
+    int[][] matrixArr = new int[0][0]; //사용자 입력으로부터 생성한 2차원 배열
+
     public M_01(int horizontalLine, int verticalLine, int diagonalLine, int intersectionPoint) {
         this.horizontalLine = horizontalLine;
         this.verticalLine = verticalLine;
@@ -30,8 +33,11 @@ public class M_01 {
         this.intersectionPoint = intersectionPoint;
     }
 
+    /* 사용자 입력을 2차원 배열로 변환하는 메서드 */
+
     /* 선과 점을 정의하는 메서드 */
     public static void isHorizontal() {
+
 
     }
     public static void isVertical() {
@@ -48,6 +54,11 @@ public class M_01 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String line = br.readLine(); //문자열을 입력받는다.
         char[] chars = line.toCharArray(); //입력받은 문자열의 한 글자씩 char[]에 저장한다
+        System.out.println(chars);
+        System.out.println(chars[0]);
+        System.out.println(chars[1]);
+        System.out.println(chars[2]);
+
 
         /*TODO : 하단 로직, 메인메서드에서 작성하는 게 아니라, M_01 객체를 생성해서 메서드로 불러오도록 */
         int[] arr = new int[chars.length]; //정수형으로 변환한 정수 저장소
@@ -55,4 +66,5 @@ public class M_01 {
             arr[i] = chars[i] - '0'; //char -> int
         }
     }
+
 }
